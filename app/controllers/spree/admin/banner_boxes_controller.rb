@@ -44,6 +44,13 @@ module Spree
         @search = super.ransack(params[:q])
         @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
       end
+      
+      private
+      
+      def permitted_resource_params
+        params.require(object_name).permit(:alt_text, :url, :category, :position, :enabled, :attachment)
+      end
+
     end
   end
 end
