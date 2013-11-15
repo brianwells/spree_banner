@@ -7,6 +7,7 @@
 <%= render :partial => 'spree/admin/shared/banner_box_sub_menu' %>
 
 <%= form_tag admin_banner_box_settings_path, :method => :put do %>
+  <% destroy = Spree.t(:destroy) %> 
   
   <fieldset class="no-border-top">
     <fieldset class="no-border-bottom">
@@ -51,7 +52,7 @@
         <% @styles.each_with_index do |(style_name, style_value), index| %>        
           <div class="field three columns">
             <%= label_tag "banner_styles[#{style_name}]", style_name %>
-            <a href='#' alt="<%= t(:destroy)%>" title="<%= t(:destroy)%>" class='destroy_banner_style with-tip'><i class='icon-trash'></i></a>
+            <a href='#' alt="<%= destroy %>" title="<%= destroy %>" class='destroy_banner_style with-tip'><i class='icon-trash'></i></a>
             <%= text_field_tag "banner_styles[#{style_name}]", style_value, :class => 'fullwidth' %>
           </div>
         <% end %>

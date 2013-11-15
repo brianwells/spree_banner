@@ -17,7 +17,7 @@
   <div class="right eight columns omega" data-hook="admin_banner_box_form_right">
     <% unless f.object.new_record? %>
       <div data-hook="thumbnail" class="field alpha two columns">
-        <%= f.label t(:thumbnail) %><br>
+        <%= f.label Spree.t(:thumbnail) %><br>
         <%= link_to image_tag(@banner_box.attachment.url(:mini)), @banner_box.attachment.url(:small) %>
       </div>
     <% end %>
