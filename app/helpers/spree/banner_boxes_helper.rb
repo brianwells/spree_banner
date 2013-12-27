@@ -6,7 +6,7 @@ module Spree
       params[:class] ||= "banner"
       params[:style] ||= SpreeBanner::Config[:banner_default_style]
       params[:list] ||= false
-      banners = Spree::BannerBox.enabled(params[:category]).order(:position)
+      banners = Spree::BannerBox.enabled(params[:category]).order(:position).offset(params[:offset]).limit(params[:limit])
       return '' if banners.empty?
 
       if params[:list]
