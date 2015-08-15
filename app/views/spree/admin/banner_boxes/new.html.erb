@@ -1,3 +1,5 @@
+<%= render :partial => 'spree/admin/shared/banner_box_sub_menu' %>
+
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @banner_box } %>
 
 <%= form_for [:admin, @banner_box], :html => { :multipart => true } do |f| %>
